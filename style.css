@@ -13,7 +13,6 @@ body{
     background-attachment: scroll;
     background-size: cover;
 }
-
 nav{
     height: 50px;
     width: 100%;
@@ -62,7 +61,6 @@ nav ul li a:hover, a.active{
     justify-content: space-between;
     align-items: center;
 }
-
 .btn-default{
     color: blue;
 	 font-size: 30px;
@@ -111,7 +109,6 @@ nav ul li a:hover, a.active{
     font-weight: 400;
     margin-bottom: 25px;
 }
-
 .btn-style{
     display: block;
     width: 100%;
@@ -125,4 +122,19 @@ nav ul li a:hover, a.active{
 .amount{
     display: flex;
     justify-content: space-between;
+}
+#booking-confirmation-area{
+    display: none;
+    text-align: center;
+    color: white;
+}
+#mark-area{
+    height: 400px;
+    width: 350px;
+    margin: 5% 38%;
+    text-align: center;
+    padding-top: 20px;
+    box-shadow: gray 5px 5px 10px ;
+    border-radius: 5 px;
+
 }

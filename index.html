@@ -27,6 +27,7 @@
     </header>
 
     <!--Booking Section-->
+<section id="booking-area">
     <main class="main-content container">
         <div class="booking-form">
             <h3>Booking Flights</h3>
@@ -54,10 +55,10 @@
                     <input id="firstClassFlight-count" class="inp-style inp-width"  value="0">
                 </div>
                 <div class="plus-minus-btn">
-                    <button onclick=" bookingFlightChange(true)"  class="btn btn-default"><i class="fas fa-plus"> + </i></button>
-                    <button  onclick=" bookingFlightChange(false)"  class="btn btn-default"><i class="fas fa-minus"> - </i></button>
+                    <button onclick=" bookingFirstClassFlightChange(true)"  class="btn btn-default"><i class="fas fa-plus"> + </i></button>
+                    <button  onclick=" bookingFirstClassFlightChange(false)"  class="btn btn-default"><i class="fas fa-minus"> - </i></button>
                 </div>
-              <p id="firstClassFlight-total"> $150 </p>
+              <p id="firstClassFlight-total"> $00 </p>
             </div>
             
             <div class="input-group f-class">
@@ -69,7 +70,7 @@
                     <button onclick=" bookingEconomyFlightChange(true)"  class="btn btn-default"><i class="fas fa-plus"> + </i></button>
                     <button  onclick=" bookingEconomyFlightChange(false)"  class="btn btn-default"><i class="fas fa-minus"> - </i></button>
                 </div>
-                <p id="economyFlight-total"> $100 </p>
+                <p id="economyFlight-total"> $00 </p>
             </div>
             <div class="calculations">
                 <div class="amount">
@@ -77,7 +78,7 @@
                         <p>Subtotal</p>
                     </div>
                     <div class="right">
-                        <p id="total-price">$500</p>
+                        <p id="total-price">$00</p>
                     </div>
                 </div>
 
@@ -86,7 +87,7 @@
                         <p>Charge 10% VAT</p>
                     </div>
                     <div class="right">
-                        <p id="tax-amount">$50</p>
+                        <p id="tax-amount">$00</p>
                     </div>
                 </div>
                 <hr>
@@ -95,11 +96,11 @@
                         <h4>Total</h4>
                     </div>
                     <div class="right">
-                        <p id="grand-total">$550</p>
+                        <p id="grand-total">$00</p>
                     </div>
                 </div>
             </div>
-            <button class="btn-style">Book Now</button>
+            <button id="book-now-button" class="btn-style">Book Now</button>
         </div>
 
         <div class="booking-content">
@@ -107,11 +108,20 @@
             <p>Lorem ipsum dolor sit amet consectetur adipisicingelit. Provident voluptatibus quam fuga laborumalias veniam libero autem quasi maxime ullam vero nama imi dolor, architecto ab facilis eaque deserunt nobise voluptatibus quam</p>
         </div>
     </section>
+    <section>
+    <div id = "booking-confirmation-area">
+        <div id= "mark-area">
+            <img src="images/check_mark.png" alt="">
+        <h2>Booking Successful !!! </h2>
+        </div>
+        <h3> Thank You for staying with DISCOVER FLY . We will  you send notification by Email.</h3>
+    </div>
+    </section>
 
     <!--Thank You-->
     <script>
-        
-        function bookingFlightChange(isIncrease){
+        // <--Booking First class flight--> 
+        function bookingFirstClassFlightChange(isIncrease){
             const firstClassFlightInput = document.getElementById('firstClassFlight-count');
             const firstClassFlightCount = parseInt(firstClassFlightInput.value);
             let firstClassFlightNewCount = firstClassFlightCount;
@@ -126,6 +136,7 @@
             document.getElementById('firstClassFlight-total').innerText ='$' + firstClassFlightTotal;
             calculationTotal()
         }
+        // <--booking Economy flight-->
         function bookingEconomyFlightChange(isIncrease){
             const economyFlightInput = document.getElementById('economyFlight-count');
             const economyFlightCount = parseInt(economyFlightInput.value);
@@ -141,6 +152,7 @@
             document.getElementById('economyFlight-total').innerText ='$' + economyFlightTotal;
             calculationTotal();
         }
+        // <--total calcolation-->
         function calculationTotal(){
             const firstClassFlightInput = document.getElementById('firstClassFlight-count');
             const firstClassFlightCount = parseInt(firstClassFlightInput.value);
@@ -153,6 +165,14 @@
             const grandTotal = totalPrice + tax ;
             document.getElementById('grand-total').innerText = '$'+ grandTotal;
         }
+        // <--book now -->
+        const bookNowBtn = document.getElementById("book-now-button");
+        bookNowBtn.addEventListener("click",function(){
+            const bookingArea = document.getElementById("booking-area");
+            bookingArea.style.display = "none";
+            const bookingConfirmationArea = document.getElementById("booking-confirmation-area");
+            bookingConfirmationArea.style.display = "block";
+        })
         
     </script>
 </body>
