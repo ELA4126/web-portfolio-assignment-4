@@ -50,21 +50,24 @@
             </div>
             <div class="input-group f-class">
                 <div>
-                    <label for="">First Class ($150)</label>
-                    <input class="inp-style inp-width" type="number" name="">
+                    <label for="" >First Class ($150)</label>
+                    <input id="firstClassFlight-count" class="inp-style inp-width" type="number" value="0">
                 </div>
                 <div class="plus-minus-btn">
-                    <p>+ -</p>
+                    <button id="number-increase" class="btn btn-default"><i class="fas fa-plus"> + </i></button>
+                    <button  id="number-decrease" class="btn btn-default"><i class="fas fa-minus"> - </i></button>
                 </div>
+              <p id="firstClassFlight-total"> $150 </p>
             </div>
             
             <div class="input-group f-class">
                 <div>
                     <label for="">Economy ($100)</label>
-                    <input class="inp-style inp-width" type="number" name="">
+                    <input id="firstClassFlight-count" class="inp-style inp-width" type="number" value="0">
                 </div>
                 <div class="plus-minus-btn">
-                    <p> <span>+</span> <span>-</span> </p>
+                    <button class="btn btn-default"><i class="fas fa-plus"> + </i></button>
+                    <button class="btn btn-default"><i class="fas fa-minus"> - </i></button>
                 </div>
             </div>
             <div class="calculations">
@@ -105,6 +108,25 @@
     </section>
 
     <!--Thank You-->
+    <script>
+        document.getElementById('number-increase').addEventListener('click',function(){
+            const firstClassFlightInput = document.getElementById('firstClassFlight-count');
+            const firstClassFlightCount = parseInt(firstClassFlightInput.value)
+            const firstClassFlightNewCount = firstClassFlightCount + 1 ;
+            firstClassFlightInput.value = firstClassFlightNewCount;
+            const firstClassFlightTotal = firstClassFlightNewCount * 150;
+            document.getElementById('firstClassFlight-total').innerText ='$' + firstClassFlightTotal;
+            
+        });
+        document.getElementById('number-decrease').addEventListener('click',function(){
+            const firstClassFlightInput = document.getElementById('firstClassFlight-count');
+            const firstClassFlightCount = parseInt(firstClassFlightInput.value);
+            const firstClassFlightNewCount = firstClassFlightCount - 1 ;
+            firstClassFlightInput.value = firstClassFlightNewCount;
+            const firstClassFlightTotal = firstClassFlightNewCount*150;
+            document.getElementById('firstClassFlight-total').innerText ='$'+ firstClassFlightTotal;
+        })
+    </script>
 </body>
 
 </html>

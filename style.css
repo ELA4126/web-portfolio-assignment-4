@@ -62,8 +62,14 @@ nav ul li a:hover, a.active{
     justify-content: space-between;
     align-items: center;
 }
+
+.btn-default{
+    color: blue;
+	 font-size: 30px;
+    border: 0;
+}
 .inp-width{
-    min-width: 300px;
+    min-width: 250px;
 }
 .plus-minus-btn{
     color: #3352F2;
